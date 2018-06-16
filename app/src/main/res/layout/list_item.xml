@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:layout_height="75dp"
+    android:layout_height="70dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:padding="5dp">
@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Title"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:id="@+id/titleTV"
         android:layout_alignParentTop="true"
         android:textStyle="bold"/>
@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Time"
-        android:textSize="40sp"
+        android:textSize="35sp"
        android:id="@+id/timeTV"
        android:layout_alignParentBottom="true" />
 
@@ -26,5 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true"
+        android:paddingEnd="15dp"
+        android:paddingRight="15dp"/>
 </RelativeLayout>

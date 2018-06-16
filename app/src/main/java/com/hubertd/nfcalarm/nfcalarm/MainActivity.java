@@ -8,6 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import com.hubertd.nfcalarm.nfcalarm.AlarmListAdapter;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        ListView alarmList = (ListView) findViewById(R.id.alarm_list);
+
+        ArrayList<Alarm> alarms = new ArrayList<>();
+        Alarm alarm = new Alarm("jeff", Calendar.getInstance().getTime());
+        alarms.add(alarm);
+        AlarmListAdapter alarmListAdapter = new AlarmListAdapter(getBaseContext(), alarms);
+
+        alarmList.setAdapter(alarmListAdapter);
+
     }
 
     @Override

@@ -15,12 +15,12 @@ import java.util.ArrayList;
 
 import static android.app.PendingIntent.getActivity;
 
-public class AlarmListAdapter extends ArrayAdapter {
+public class AlarmListAdapter extends ArrayAdapter<Alarm> {
     private Context context;
     private ArrayList<Alarm> alarms;
 
     public AlarmListAdapter(Context context, ArrayList<Alarm> alarms) {
-        super(context, 0);
+        super(context, R.layout.list_item);
         this.context = context;
         this.alarms = alarms;
     }
@@ -31,10 +31,6 @@ public class AlarmListAdapter extends ArrayAdapter {
         return alarms.size();
     }
 
-    @Override
-    public Object getItem(int i) {
-        return null;
-    }
 
     @Override
     public long getItemId(int i) {
@@ -43,17 +39,17 @@ public class AlarmListAdapter extends ArrayAdapter {
 
     @Override
     public View getView(int i, @Nullable View view, @NonNull ViewGroup viewGroup) {
-        View listItem = view;
-
         if (view == null){
-            listItem = LayoutInflater.from(context).inflate(R.layout.list_item, viewGroup);
+            LayoutInflater inflater = LayoutInflater.from(getContext());
+            view = inflater.inflate(R.layout.list_item, viewGroup, false);
+
         }
 
         TextView title = (TextView) view.findViewById(R.id.titleTV);
         TextView time = (TextView) view.findViewById(R.id.timeTV);
 
-        title.setText(i);
-        return listItem;
+        title.setText("Jeffff");
+        return view;
     }
 
 }
